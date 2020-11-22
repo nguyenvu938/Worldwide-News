@@ -30,7 +30,7 @@ class CustomCell: UITableViewCell {
         return imageView
     }()
     
-    let contentLabel: UILabel = {
+    let descriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 4
@@ -63,7 +63,7 @@ class CustomCell: UITableViewCell {
         addSubview(containerView)
         addSubview(titleLabel)
         addSubview(newImageView)
-        addSubview(contentLabel)
+        addSubview(descriptionLabel)
         addSubview(timeLabel)
     }
     
@@ -82,10 +82,10 @@ class CustomCell: UITableViewCell {
         newImageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.95).isActive = true
         newImageView.heightAnchor.constraint(equalTo: newImageView.widthAnchor, multiplier: 0.5).isActive = true
 
-        contentLabel.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0).isActive = true
-        contentLabel.topAnchor.constraint(equalTo: newImageView.bottomAnchor, constant: 5).isActive = true
-        contentLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
-        contentLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
+        descriptionLabel.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0).isActive = true
+        descriptionLabel.topAnchor.constraint(equalTo: newImageView.bottomAnchor, constant: 5).isActive = true
+        descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
+        descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
 
         timeLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
         timeLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true

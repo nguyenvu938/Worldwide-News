@@ -29,10 +29,11 @@ class ViewController: UIViewController {
     }()
     
     var titleArr = [String]()
-    var contentArr = [String]()
     var urlArr = [String]()
     var urlToImageArr = [String]()
     var publishedAtArr = [String]()
+    var descriptionArr = [String]()
+    var contentArr = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,16 +73,18 @@ class ViewController: UIViewController {
                 let json = JSON(value)
                 for i in json["articles"].arrayValue {
                     titleArr.append(i["title"].stringValue)
-                    contentArr.append(i["content"].stringValue)
                     urlArr.append(i["url"].stringValue)
                     urlToImageArr.append(i["urlToImage"].stringValue)
                     publishedAtArr.append(i["publishedAt"].stringValue)
+                    descriptionArr.append(i["description"].stringValue)
+                    contentArr.append(i["content"].stringValue)
                 }
-                
             case .failure(let error):
                 print("Error is \(error)")
             }
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
 }
@@ -96,7 +99,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.backgroundColor = UIColor(red: 0.96, green: 0.41, blue: 0.40, alpha: 1.00)
         cell.titleLabel.text = titleArr[indexPath.row]
-        cell.contentLabel.text = contentArr[indexPath.row]
+        cell.descriptionLabel.text = descriptionArr[indexPath.row]
         cell.newImageView.kf.setImage(with: URL(string: urlToImageArr[indexPath.row]))
         
         let dateFormatter = ISO8601DateFormatter()
@@ -111,11 +114,24 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return 400
     }
     
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if let url = URL(string: urlArr[indexPath.row]) {
+//            UIApplication.shared.open(url)
+//        }
+//
+//    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let url = URL(string: urlArr[indexPath.row]) {
-            UIApplication.shared.open(url)
-        }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let resultVC = storyboard.instantiateViewController(identifier: "ReadViewController") as! ReadViewController
         
+        resultVC.modalPresentationStyle = .fullScreen
+        resultVC.titleLabel.text = titleArr[indexPath.row]
+        resultVC.descriptionLabel.text = descriptionArr[indexPath.row]
+        resultVC.newImageView.kf.setImage(with: URL(string: urlToImageArr[indexPath.row]))
+        resultVC.contentLabel.text = contentArr[indexPath.row]
+        
+        self.present(resultVC, animated: false, completion: nil)
     }
 }
 

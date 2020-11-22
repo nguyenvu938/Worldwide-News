@@ -17,6 +17,7 @@
 		527376332569596E00931E85 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527376322569596D00931E85 /* Model.swift */; };
 		527376362569598800931E85 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527376352569598800931E85 /* CustomCell.swift */; };
 		5273765F25699DE000931E85 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5273765E25699DE000931E85 /* DateExtension.swift */; };
+		52737662256A60C200931E85 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52737661256A60C200931E85 /* ReadViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		527376322569596D00931E85 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		527376352569598800931E85 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		5273765E25699DE000931E85 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		52737661256A60C200931E85 /* ReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
 		A97B9DE60D26E2E512201537 /* Pods-NewsAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsAPI.release.xcconfig"; path = "Target Support Files/Pods-NewsAPI/Pods-NewsAPI.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 				52737619256957D000931E85 /* AppDelegate.swift */,
 				5273761B256957D000931E85 /* SceneDelegate.swift */,
 				5273761D256957D000931E85 /* ViewController.swift */,
+				52737661256A60C200931E85 /* ReadViewController.swift */,
 				5273765E25699DE000931E85 /* DateExtension.swift */,
 				527376322569596D00931E85 /* Model.swift */,
 				527376352569598800931E85 /* CustomCell.swift */,
@@ -217,6 +220,7 @@
 				5273761E256957D000931E85 /* ViewController.swift in Sources */,
 				5273765F25699DE000931E85 /* DateExtension.swift in Sources */,
 				5273761A256957D000931E85 /* AppDelegate.swift in Sources */,
+				52737662256A60C200931E85 /* ReadViewController.swift in Sources */,
 				527376362569598800931E85 /* CustomCell.swift in Sources */,
 				5273761C256957D000931E85 /* SceneDelegate.swift in Sources */,
 				527376332569596E00931E85 /* Model.swift in Sources */,
